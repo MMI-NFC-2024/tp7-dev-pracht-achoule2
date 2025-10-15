@@ -7,3 +7,21 @@ const plot = Plot.plot({ ...options, document: new JSDOM("").window.document });
 ---
 
 <div set:html={plot.outerHTML} />
+
+<figure>
+  <div id="plot"></div>
+  <figcaption>Figure 1. Répartition des âges en France.</figcaption>
+</figure>
+
+<script type="module">
+  import * as Plot from "@observablehq/plot";
+
+  const plot = Plot.plot({
+    title: "Répartition des âges",
+    ariaLabel: "Graphique montrant la répartition des âges",
+    marks: [Plot.frame()]
+  });
+
+  document.getElementById("plot").appendChild(plot);
+</script>
+
