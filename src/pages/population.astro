@@ -1,0 +1,25 @@
+---
+import populationMain from "../assets/penguins.json";
+import Layout from "../layouts/Layout.astro";
+import plot from "../scripts/plot.js";
+
+
+const listePeriode = [...new Set(populationMain.map(d => d.species))].reverse();
+const listeSexe = [...new Set(populationMain.map(d => d.island))];
+const listeAge = [...new Set(populationMain.map(d => d.sex))];
+---
+<Layout>
+<select id="periode">
+  {listePeriode.map((p, i) => <option selected={i === 0}>{p}</option>)}
+</select>
+<select id="sexe">
+  {listeSexe.map((s) => <option>{s}</option>)}
+</select>
+<select id="age">
+  {listeAge.map((a) => <option>{a}</option>)}
+</select>
+<div id="plot"></div>
+</div>
+
+<script type="module" src="/src/scripts/plot.js"></script>
+</Layout>
