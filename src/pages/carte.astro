@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout>
+  <div id="map" style="height: 600px;"></div>
+  <script type="module" src="/src/scripts/leaflet-map.js"></script>
+
+  <section id="etab-info" class="etab-info"></section>
+
+  <style>
+    .etab-info {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
+      font-family: sans-serif;
+    }
+    .etab-info h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    .etab-info ul {
+      padding-left: 1.2rem;
+    }
+    .etab-info li {
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</Layout>
